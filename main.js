@@ -40,7 +40,7 @@ let miss_punch = false
 //let Qatk2 = false
 //let Eatk2 = false
 let player
-let jotpic
+//let jotpic
 let jotaro_hp = 100
 let Jsize = 1
 let StarPlatinum = 500
@@ -123,68 +123,72 @@ let kaktheme
 let counter = 0
 
 function preload() {
-game.load.image('JotaroWins', 'JotaroWins.png')
-game.load.image('DioWins', 'DioWins.png')
-//game.load.image('diopic', 'diopic.png')
-game.load.image('jotpic', 'jotpic.png')
-game.load.spritesheet('dayandnight', 'day and night big.png', 1130, 653)
-game.load.spritesheet('romaBG', 'roma_sprt1.jpg', 1090, 613)
-game.load.spritesheet('jotaro', 'Jotarofinished_kappa.png', 630 / 10, 1319 / 20)
-game.load.spritesheet('dio', 'dio.png', 650 /10 , 1738 /22)
-game.load.spritesheet('tanjiro1','tanjiro_spritesheet.png', 102, 51)
-game.load.spritesheet('inosuke1', 'inosuke_spritesheet.png', 95, 72)
-game.load.audio('dio theme', 'dios theme.ogg')
-game.load.audio('the world', 'Za Warudo 1.ogg')
-game.load.audio('dio tp', 'dio_tp.ogg')
-game.load.audio('jotaro theme', 'jotaro_ost.ogg')
-game.load.audio('ora', 'ora.ogg')
-game.load.audio('muda', 'muda.ogg')
-game.load.audio('Star_Plat1', 'StarPlat_TW.ogg')
-game.load.audio('punch', 'punch.ogg')
-game.load.audio('round', 'Round.ogg')
-game.load.audio('zero', 'zero.ogg')
-game.load.spritesheet('health', 'health.png', 628, 1184 / 8)
-game.load.audio('TE', 'brrr.ogg')
-game.load.audio('Kakost', 'noble pope.ogg')
-game.load.audio('Woosh', 'jotaro_dash.ogg')
-game.load.audio('tanslashaudio1', 'slash_hit.ogg')
-game.load.audio('tanslashaudio2', 'slash_miss1.ogg')
-game.load.audio('tanslashaudio3', 'slash_miss2.ogg')
-game.load.audio('ibuki1', 'ibuki.ogg')
-game.load.audio('yousayrun1', 'yousayrun_pure.ogg')
-game.load.audio('witcher_ost1', 'witcher_ost.ogg')
+//spritesheets
 
-game.load.image('Minterior', 'Project2/interior.png')
-game.load.image('Minterior3', 'Project2/interior3.png')
-game.load.image('Mbuilding1', 'Project2/building1.png')
-game.load.image('Mpod_brat', 'Project2/pod_brat.png')
-game.load.image('Mbuilding2', 'Project2/building2.png')
-game.load.image('Mjapaniq1', 'Project2/japaniq1.png')
-game.load.image('Mtile_castle_grey', 'Project2/tile_castle_grey.png')
-game.load.image('M32x32_tileset_ruins', 'Project2/32x32_tileset_ruins.png')
-game.load.image('M32x32_tileset_marketplace', 'Project2/32x32_tileset_marketplace.png')
-game.load.image('M32x32_tileset_terrains_shops', 'Project2/32x32_tileset_terrains_shops.png')
-game.load.image('Mvikings', 'Project2/32x32_tileset_vikings_city.png')
-game.load.image('Mwood2', 'Project2/M32x32_tileset_woodland 2.png')
-game.load.image('fontan', 'ProjectM/fontan.png')
+    //characters
+game.load.spritesheet('jotaro', 'assets/characters/Jotaro/Jotarofinished_kappa.png', 630 / 10, 1319 / 20)
+game.load.spritesheet('dio', 'assets/characters/Dio/dio.png', 650 /10 , 1738 /22)
+game.load.spritesheet('tanjiro1','assets/characters/Tanjiro/tanjiro_spritesheet.png', 102, 51)
+game.load.spritesheet('inosuke1', 'assets/characters/Inosuke - assassin/inosuke_spritesheet.png', 95, 72)
+    //other
+game.load.spritesheet('dayandnight', 'assets/other/day and night big.png', 1130, 653)
+game.load.spritesheet('health', 'assets/other/health.png', 628, 1184 / 8)
 
-game.load.tilemap('map_all', 'ProjectM/mapp_all.json', null, Phaser.Tilemap.TILED_JSON)
-game.load.image('building1V', 'ProjectM/building1.png')
-game.load.image('building2V', 'ProjectM/building2.png')
-game.load.image('ruinsV', 'ProjectM/32x32_tileset_ruins.png')
-game.load.image('marketplaceV', 'ProjectM/32x32_tileset_marketplace.png')
-game.load.image('shopsV', 'ProjectM/32x32_tileset_terrains_shops.png')
-game.load.image('vikingsV', 'ProjectM/32x32_tileset_vikings_city.png')
-game.load.image('japanV', 'ProjectM/32x32_japan.png')
-game.load.image('japan1V', 'ProjectM/32x32_japan1.png')
-game.load.image('hshopV', 'ProjectM/32x32_tileset_house_shop.png')
-game.load.image('portV', 'ProjectM/32x32_tileset_old_port.png')
-game.load.image('wood2V', 'ProjectM/32x32_tileset_woodland 2.png')
-game.load.image('woodV', 'ProjectM/32x32_tileset_woodland.png')
-game.load.image('celina2V', 'ProjectM/celianna_farm_old.png')
-game.load.image('celina3V', 'ProjectM/celianna_farmnature_crops_fields.png')
-game.load.image('celina4V', 'ProjectM/celianna_japanese.png')
-game.load.image('jitoV', 'ProjectM/jito.png')
+//audio
+   
+    //sfx
+game.load.audio('punch', 'assets/audio/sfx/punch.ogg')
+game.load.audio('TE', 'assets/audio/osfx/brrr.ogg')
+game.load.audio('Woosh', 'assets/audio/sfx/jotaro_dash.ogg')
+game.load.audio('tanslashaudio1', 'assets/audio/sfx/slash_hit.ogg')
+game.load.audio('tanslashaudio2', 'assets/audio/sfx/slash_miss1.ogg')
+game.load.audio('tanslashaudio3', 'assets/audio/sfx/slash_miss2.ogg')
+    //vocal
+game.load.audio('the world', 'assets/audio/vocals/Za Warudo 1.ogg')
+game.load.audio('Star_Plat1', 'assets/audio/vocals/StarPlat_TW.ogg')
+game.load.audio('ora', 'assets/audio/vocals/ora.ogg')
+game.load.audio('muda', 'assets/audio/vocals/muda.ogg')
+game.load.audio('zero', 'assets/audio/vocals/zero.ogg')
+    //music
+game.load.audio('dio theme', 'assets/audio/music/dios theme.ogg') 
+game.load.audio('jotaro theme', 'assets/audio/music/jotaro_ost.ogg')
+game.load.audio('round', 'assets/audio/music/Round.ogg')
+game.load.audio('ibuki1', 'assets/audio/music/Ibuki.ogg')
+game.load.audio('yousayrun1', 'assets/audio/music/yousayrun_pure.ogg')
+game.load.audio('witcher_ost1', 'assets/audio/music/witcher_ost.ogg')
+
+//map
+game.load.image('Minterior', 'assets/maps/Project2/interior.png')
+game.load.image('Minterior3', 'assets/maps/Project2/interior3.png')
+game.load.image('Mbuilding1', 'assets/maps/Project2/building1.png')
+game.load.image('Mpod_brat', 'assets/maps/Project2/pod_brat.png')
+game.load.image('Mbuilding2', 'assets/maps/Project2/building2.png')
+game.load.image('Mjapaniq1', 'assets/maps/Project2/japaniq1.png')
+game.load.image('Mtile_castle_grey', 'assets/maps/Project2/tile_castle_grey.png')
+game.load.image('M32x32_tileset_ruins', 'assets/maps/Project2/32x32_tileset_ruins.png')
+game.load.image('M32x32_tileset_marketplace', 'assets/maps/Project2/32x32_tileset_marketplace.png')
+game.load.image('M32x32_tileset_terrains_shops', 'assets/maps/Project2/32x32_tileset_terrains_shops.png')
+game.load.image('Mvikings', 'assets/maps/Project2/32x32_tileset_vikings_city.png')
+game.load.image('Mwood2', 'assets/maps/Project2/M32x32_tileset_woodland 2.png')
+game.load.image('fontan', 'assets/maps/ProjectM/fontan.png')
+
+game.load.tilemap('map_all', 'assets/maps/ProjectM/mapp_all.json', null, Phaser.Tilemap.TILED_JSON)
+game.load.image('building1V', 'assets/maps/ProjectM/building1.png')
+game.load.image('building2V', 'assets/maps/ProjectM/building2.png')
+game.load.image('ruinsV', 'assets/maps/ProjectM/32x32_tileset_ruins.png')
+game.load.image('marketplaceV', 'assets/maps/ProjectM/32x32_tileset_marketplace.png')
+game.load.image('shopsV', 'assets/maps/ProjectM/32x32_tileset_terrains_shops.png')
+game.load.image('vikingsV', 'assets/maps/ProjectM/32x32_tileset_vikings_city.png')
+game.load.image('japanV', 'assets/maps/ProjectM/32x32_japan.png')
+game.load.image('japan1V', 'assets/maps/ProjectM/32x32_japan1.png')
+game.load.image('hshopV', 'assets/maps/ProjectM/32x32_tileset_house_shop.png')
+game.load.image('portV', 'assets/maps/ProjectM/32x32_tileset_old_port.png')
+game.load.image('wood2V', 'assets/maps/ProjectM/32x32_tileset_woodland 2.png')
+game.load.image('woodV', 'assets/maps/ProjectM/32x32_tileset_woodland.png')
+game.load.image('celina2V', 'assets/maps/ProjectM/celianna_farm_old.png')
+game.load.image('celina3V', 'assets/maps/ProjectM/celianna_farmnature_crops_fields.png')
+game.load.image('celina4V', 'assets/maps/ProjectM/celianna_japanese.png')
+game.load.image('jitoV', 'assets/maps/ProjectM/jito.png')
 game.load.image('paoV', 'ProjectM/PathAndObjects.png')
 }
 
@@ -352,7 +356,6 @@ function update () {
     DMGJOTARO()
     CONTACTRIGHT()
     CONTACT()
-    //STOPTIME()
     DEATH()
     //DMG_DIO()
     DIO_RANGE()
@@ -400,13 +403,9 @@ function update () {
     
     if (pose_counter > 10){
         dio.animations.play('stand')    
-    } 
-
-    //if (jotaro_hp < 75 && !(cur_punch_X <= max_punch_X && cur_punch_Y <= max_punch_Y) && !(cur_Tpunch_X <= max_Tpunch_X && cur_Tpunch_Y <= max_Tpunch_Y )){
-       // jotaro_hp += 0.015
-      // }
-       
-//console.log(tanjiro_hp)
+    }
+     
+//range
 
 if (game.input.keyboard.justPressed(Phaser.Keyboard.Q) && cur_punch_X <= max_punch_X && cur_punch_Y <= max_punch_Y){
     DQatk = true
@@ -432,31 +431,7 @@ if (game.input.keyboard.justPressed(Phaser.Keyboard.E) && (cur_punch_X <= max_pu
     miss_kick = true
 }else miss_kick = false
 
-
 } 
-//const BG = function(){
-//bg = game.add.sprite(0, 0, 'romaBG')
-    //bg.animations.add('warudo', [1], 60, true) 
-    //bg.frame = 1
-//diopic = game.add.image(250, 0, 'diopic')
-//diopic.scale.setTo(0.3)
-//jotpic = game.add.image(2, 1, 'jotpic')
-//jotpic.scale.setTo(0.28)  
-//}
-//const INO_DEAD_CR = function(){
- //   ino_dead = game.add.group()
-  //  game.physics.enable(ino_dead)
-  //  ino_dead.enableBody
-  //  ino_dead.inputEnableChildren
-//
-  //  inosuke_gr.forEach(function (dead){
-  //      dead.animations.add('I_dead', [19, 20, 21], 6, false).play()
-  //      dead.scale.setTo(1.6)
-  //      dead.anchor.setTo(0.5)
-       // dead.physics.enable(enemy)
-  //      dead.body.collideWorldBounds = true 
- //  })
-//}
 
 const DAYANDNIGHT = function(){
     dnn = game.add.sprite(game.width / 2, game.height / 2, 'dayandnight')
@@ -512,52 +487,10 @@ if (time >= 0 && time<= 9600 && player.x >= 0 && player.x <= 3200 && player.y >=
 } else if (player.x >= 2240 && player.x <= 3136 && player.y >= 2080 && player.y <= 2656){
     dnn.frame = 0
 
-
-//} else if (time >= 0 && time<= 9600 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 9
-//}else if (time >= 9600 && time<= 10134 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 8
-//}else if (time >= 10134 && time<= 10668 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 7
-//}else if (time >= 10668 && time<= 11202 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 6
-//}else if (time >= 11202 && time<= 11736 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 5
-//}else if (time >= 11736 && time<= 12270 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 4
-//}else if (time >= 12270 && time<= 12804 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 3
-//}else if (time >= 12804 && time<= 13338 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 2
-//}else if (time >= 13338 && time<= 13872 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 1
-//}else if (time >= 13872 && time<= 14400 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 1
-//}else if (time >= 14400 && time<= 24000 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 0
-//}else if (time >= 24000 && time<= 24534 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 1
-//}else if (time >= 24534 && time<= 25068 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 1
-//}else if (time >= 25068 && time<= 25602 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 2
-//}else if (time >= 25602 && time<= 26136 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 3
-//}else if (time >= 26136 && time<= 26770 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 4
-//}else if (time >= 26770 && time<= 27304 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 5
-//}else if (time >= 27304 && time<= 27838 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 6
-//}else if (time >= 27838 && time<= 28372 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 7
-//}else if (time >= 28372 && time<= 28800 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    dnn.frame = 8
-//}else if (time > 28800 && player.x >= 128 && player.x <= 928 && player.y >= 2080 && player.y <= 2656){
-//    time = 0
 }else dnn.frame = 10 
 
 }
+
 const INVERT = function(){
    invert = game.make.bitmapData() 
    invert.addToWorld(game.world.centerX, game.world.centerY, 0.5, 0.5)
@@ -1206,7 +1139,7 @@ const OST = function(){
     Woosh = game.add.audio('Woosh')
     WooshY = game.add.audio('Woosh')
     time_end = game.add.audio('TE')
-    kaktheme = game.add.audio('Kakost')
+    //kaktheme = game.add.audio('Kakost')
     tanslashaudio1 = game.add.audio('tanslashaudio1')
     tanslashaudio2 = game.add.audio('tanslashaudio2')
     tanslashaudio3 = game.add.audio('tanslashaudio3')
@@ -1222,7 +1155,7 @@ const OST = function(){
     roundabout.volume = 0.1
     zero.volume = 0.5
     starplat.volume = 0.2
-    kaktheme.volume = 0
+    //kaktheme.volume = 0
     tanslashaudio1.volume = 0.2
     tanslashaudio2.volume = 0.2
     tanslashaudio3.volume = 0.2
@@ -1252,6 +1185,7 @@ if(player.x >= 2240 && player.x <= 3136 && player.y >= 2080 && player.y <= 2656)
 
 } else witcher_ost.volume = 0
 }
+
 const CONTACTRIGHT = function(){
     
     cur_punch_X = dio.x - player.x
@@ -1275,23 +1209,6 @@ const CONTACTRIGHT = function(){
       
     
 } 
-
-const STOPTIME = function(){
-    if (StarPlatinum < 250 || The_World < 250){
-        invert.processPixelRGB(forEachPixel, this)
-    }
-   
-}
-
-function forEachPixel (pixel) {
-
-	pixel.r = 255 - pixel.r;
-	pixel.g = 255 - pixel.g;
-	pixel.b = 255 - pixel.b;
-
-	return pixel;
-
-}
 
 const HEALTHBARJOTARO = function(){
     hp2 = game.add.sprite(game.width / 2, game.height / 2, 'health')
