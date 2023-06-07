@@ -138,7 +138,7 @@ game.load.spritesheet('health', 'assets/other/health.png', 628, 1184 / 8)
    
     //sfx
 game.load.audio('punch', 'assets/audio/sfx/punch.ogg')
-game.load.audio('TE', 'assets/audio/osfx/brrr.ogg')
+game.load.audio('TE', 'assets/audio/sfx/brrr.ogg')
 game.load.audio('Woosh', 'assets/audio/sfx/jotaro_dash.ogg')
 game.load.audio('tanslashaudio1', 'assets/audio/sfx/slash_hit.ogg')
 game.load.audio('tanslashaudio2', 'assets/audio/sfx/slash_miss1.ogg')
@@ -189,7 +189,7 @@ game.load.image('celina2V', 'assets/maps/ProjectM/celianna_farm_old.png')
 game.load.image('celina3V', 'assets/maps/ProjectM/celianna_farmnature_crops_fields.png')
 game.load.image('celina4V', 'assets/maps/ProjectM/celianna_japanese.png')
 game.load.image('jitoV', 'assets/maps/ProjectM/jito.png')
-game.load.image('paoV', 'ProjectM/PathAndObjects.png')
+game.load.image('paoV', 'assets/maps/ProjectM/PathAndObjects.png')
 }
 
 function create() {
